@@ -1,0 +1,42 @@
+.textoConfig{
+    text-align: justify;
+    font-size: calc((100vh/365.7143)*11);
+}
+.espaco{
+    
+    position: center;
+    align-items: center;
+    text-align: center;
+}
+.tamanhao{
+    font-size: calc((100vh/365.7143)*25);
+}
+.vhconfig{
+    height: 70vh !important;
+}
+
+.imgTamanho{
+    width: 400px;
+    padding-top: 25%;
+ }
+
+ @media screen and (max-width: 768px) {
+     .imgTamanho
+     {  
+         width: calc((100vh/ 365.7143) * 200);
+         min-width: 25%;
+  
+     }
+     .placeitem{
+        flex-direction: column;
+     }
+ }
+ .placeitem{}
+
+ @media screen and (min-width: 768px) {
+    .imgTamanho
+    {  
+       padding-left: 50px;
+ 
+    }
+}

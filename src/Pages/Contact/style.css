@@ -1,0 +1,69 @@
+.bor_header_left, .bor_header_right {
+    position: relative;
+    display: inline-block;
+    height: 3px;
+    background: #bdc8cf;
+    width: 180px;
+    border-radius: 43px;
+    top: -3px;
+}
+li{
+    list-style: none;
+}
+
+.decorationIcons{
+    list-style: none;
+
+}
+@media screen  and(max-width: 491px){
+    .decorationLi .email{font-size: calc((100vh/365.7143)*10);
+    }
+    
+}
+.decorationLi{
+    font-size: 20px;
+    text-decoration: none;
+}
+.email{
+    font-size: 15px;
+}
+.decorationLi a{
+    color: black;
+    font-size: calc((100vh/365.7143)*13);
+    padding-left: 2%;
+    text-decoration: none;
+}
+.decorationLi a:hover{
+    color: #535455;
+}
+Button p {
+    color: black;
+    font-size: calc((100vh/365.7143)*8);
+}
+.decorationLi li
+{
+    text-align: left;
+    justify-content: left;
+}
+
+.localizacao{
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+.pl-2{
+    padding-left: 1%;
+}
+.pr-2{
+    padding-right: 1%;
+}
+.paddingRede{
+    font-size: 30px;
+    padding-left: 50%;
+}
+a{
+text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+a:hover{
+    color: rgb(255, 255, 255);
+}

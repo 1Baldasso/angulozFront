@@ -1,0 +1,54 @@
+.card-parent{
+    width: 100%;
+}
+.card-image{
+    padding:5%;
+    width: 300px;
+    height: 300px;
+    object-fit: contain;
+    align-self: center;
+}
+.botao-comprar{
+    width: fit-content;
+    align-self: center;
+}
+.float-right{
+   display: block;
+   float: right;
+}
+.icone-editar{
+    color: inherit;
+}
+.preco{
+    font-size: 1.3rem;
+}
+
+.hover-image {
+    position: relative;
+    left: 0;
+    top: 0;
+    margin: auto;
+  }
+  .hover-image span {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    bottom: 200px;
+    width: 100%;
+    line-height: 45px;
+    height: 45px;
+    display: block;
+    background-color: #000;
+    color: #FFF;
+    text-align: center;
+    font-family: "Roboto";
+    left: 0;
+    top: 0;
+    margin: auto;
+    transition: all 0.4s ease;
+  }
+  .hover-image:hover span {
+    opacity: 1;
+    visibility: visible;
+    bottom: 0;
+  }

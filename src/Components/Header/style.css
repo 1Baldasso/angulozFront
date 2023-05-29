@@ -1,0 +1,23 @@
+.navBar-end{
+    text-align: right;
+    justify-content: end;
+}
+.logo{
+    margin: 0;
+    padding: 0;
+    height: 100px;
+    min-height: 40px;
+}
+.fonte{
+    font-size: 20px;
+}
+.bg-fundo{
+    background-color: rgba(206, 204, 202, 0.068);
+}
+.vh-config{
+    height: 15vh;
+}
+.colorHeader{
+    background-color: rgba(252, 252, 252, 0.342); 
+}
+
