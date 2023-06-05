@@ -2,7 +2,7 @@ import axios from 'axios';
 export default class UploadService {
     constructor() {
         this.url = process.env.REACT_APP_ENDPOINT_API;
-        this.userSecret = '0ebd5f82-da8a-49f1-91c3-2516f258478a';
+        this.userSecret = localStorage.getItem('token');
     }
 
     async PostProjeto(projeto) {

@@ -23,7 +23,7 @@ function Login() {
         }).then((response) => {
             console.log(response.data)
             setAuth(response.data);
-            // window.location.href = '/admin'
+            window.location.href = '/admin'
         }).catch((error) => {
             console.log(error)
             alert('Erro ao fazer login!')

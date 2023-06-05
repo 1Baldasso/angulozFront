@@ -57,6 +57,11 @@ function Acesso() {
                 alert('Erro adicionar imagens!' + error.message);
             });
         }).catch((error) => {
+            if(error.response.status === 401)
+            {
+                alert('Sessão expirada!');
+                window.location.href = '/login';
+            }
             alert('Erro ao criar projeto!\n' + error.message);
         });
 
