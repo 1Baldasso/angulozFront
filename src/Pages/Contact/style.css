@@ -58,12 +58,24 @@ Button p {
 }
 .paddingRede{
     font-size: 30px;
-    padding-left: 50%;
+    text-align: center;
 }
-a{
-text-decoration: none;
-    color: rgb(255, 255, 255);
+img svg{
+    color: black;
+}
+a{  
+    
+    text-decoration: none;
+    color: black;
 }
 a:hover{
-    color: rgb(255, 255, 255);
+    color: rgb(99, 94, 94);
+}
+.ajustandoQR
+{
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    width: calc((100vh/ 365.7143) * 200);
+    min-width: 25%;
 }

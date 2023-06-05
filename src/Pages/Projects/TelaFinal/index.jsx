@@ -1,25 +1,60 @@
+import { useParams } from 'react-router-dom';
+import { useState, useContext, useEffect } from 'react';
 import Header from '../../../Components/Header/index'
 import { Container, Row, Col } from 'react-bootstrap';
-import CarroselProjetos from '../../../Components/CarroselProjetos';
+import ProjetosService from '../../../Services/projetos.service';
+import { LanguageContext } from '../../../Providers/LanguageProvider';
 import './style.css'
+
 function ProjetosFinais() {
-    return ( 
-    <>
-     <Header></Header>
-     <Container>
-        <Row className='pt-3 '>
-            <Col className='col-lg-4 col-sm-4 fontezinha'>
-            <h1 className='fontezinha'>Titulo do Projeto</h1>
-            <p className='pt-2'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum quidem assumenda culpa nobis deleniti ut laudantium sint! Aperiam debitis atque consectetur quibusdam provident delectus fugit distinctio officiis in. Esse, repudiandae!
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad esse temporibus quisquam, perspiciatis est ipsam quaerat commodi vero id fugit, deserunt accusamus corporis. Autem aliquid in eaque modi odio dolores? Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, cumque facilis nulla culpa mollitia animi corporis minima excepturi numquam sunt optio et, nemo ipsum necessitatibus ea! Voluptas consectetur facilis id?
-            </p>
-            </Col>
-            <Col className='col-lg-8 col-sm-8'>
-                <CarroselProjetos></CarroselProjetos>
-            </Col>
-        </Row>
-     </Container>
-    </> 
+    const { id } = useParams();
+    const service = new ProjetosService();
+    const [projeto, setProjeto] = useState({});
+    const [imagens, setImagens] = useState([]);
+    const { language } = useContext(LanguageContext);
+    const fetchProjeto = async () => {
+        const projeto = await service.getOne(id,language);
+        setProjeto(projeto);
+        if(language === 'br' && projeto.imagens !== imagens){
+            setImagens(projeto.imagens);
+        }
+    }
+    useEffect(() => {
+        fetchProjeto();
+    }, [language]);
+        
+    return (
+        <>
+            <Header></Header>
+            <Container>
+                <Row className='d-flex pt-3'>
+                    <h1 className=''>{projeto.titulo}</h1>
+                    <Col className=' col-lg-4 d-flex fontezinha'>
+                        <p className='pt-2 text-align-justify'>
+                            {
+                                projeto.descricao && projeto.descricao.split('\n').map((item, index) => {
+                                    return (
+                                        <span key={index}>
+                                            {item}
+                                            <br />
+                                        </span>
+                                    )
+                                })
+                            }
+                        </p>
+                    </Col>
+                    <Col className='col-lg-8'>
+                        <div className='d-flex flex-column'>
+                            {imagens && imagens.map((imagem, index) => {
+                                return (
+                                    <img key={index} className='classificandoContainer tamanhoImagem pt-3' src={`data:image/png;base64, ${imagem}`} alt="" />
+                                )
+                            })}
+                        </div>
+                    </Col>
+                </Row>
+            </Container>
+        </>
     );
 }
 

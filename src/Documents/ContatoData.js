@@ -18,6 +18,14 @@ const ContatoData = {
     cliqueLocal:{
         en: "Click here to see the map.",
         br: "Clique aqui para ver o mapa."
+    },
+    fechar:{
+        en: "Close",
+        br: "Fechar"
+    },
+    telefone:{
+        en: "Phone",
+        br: "Telefone"
     }
 }
 export default ContatoData;

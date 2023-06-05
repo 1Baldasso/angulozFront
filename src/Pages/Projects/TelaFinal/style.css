@@ -1,5 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-
+h1{
+    font-size: calc((100vh/365.7143)*25);
+}
 .fontezinha{
+    font-size: calc((100vh/365.7143)*9);
     font-family: 'Roboto', sans-serif;
+    text-align: justify;
+}
+.classificandoContainer{
+   
+    background-size: cover;
+    background-position: center;
+    width: auto;
+    object-fit: contain;
+    max-height: 40vh;
+}
+.tamanhoImage {
+    object-fit: cover;
+}
+.tamanhoIcone{
+    font-size: calc((100vh/365.7143)*25);
+}
+.tamanhoIcone a{
+    padding-left: 2%;
 }

@@ -1,7 +1,7 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import React, { useContext }from 'react';
+import React, {useContext} from 'react';
 import Logo from '../../Images/Logo.png';
 import { useLocation } from 'react-router-dom';
 import { LanguageContext } from '../../Providers/LanguageProvider';

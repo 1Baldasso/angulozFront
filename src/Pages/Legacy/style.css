@@ -25,13 +25,17 @@
      {  
          width: calc((100vh/ 365.7143) * 200);
          min-width: 25%;
+         position: relative;
+         align-items: center;
   
      }
      .placeitem{
         flex-direction: column;
      }
  }
- .placeitem{}
+ .placeitem{
+    
+ }
 
  @media screen and (min-width: 768px) {
     .imgTamanho

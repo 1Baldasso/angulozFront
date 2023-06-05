@@ -1,10 +1,14 @@
 import Carousel from 'react-bootstrap/Carousel';
-import PrimeiraCasa from '../../Images/telaProjects/PrimeiraCasa.jpg'
-import SegundaCasa from '../../Images/telaProjects/SegundaCasa.jpg'
-import PrimeiraCasa3 from '../../Images/telaProjects/PrimeiraCasa3.jpg'
+
 function CarroselProjetos() {
   return (
-    <Carousel slide={false}>
+    <>
+    
+    <div className='w-100'>
+    
+    </div>
+    </>
+    /*<Carousel slide={false}>
       <Carousel.Item>
         <img
           className="d-block w-100"
@@ -19,7 +23,7 @@ function CarroselProjetos() {
           alt="Third slide"
         />
       </Carousel.Item>
-    </Carousel>
+    </Carousel>*/
   );
 }
 
