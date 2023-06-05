@@ -29,7 +29,7 @@ function ProjetosFinais() {
             <Container>
                 <Row className='d-flex pt-3'>
                     <h1 className=''>{projeto.titulo}</h1>
-                    <Col className=' col-lg-4 d-flex fontezinha'>
+                    <Col lg={4} className=' d-flex fontezinha'>
                         <p className='pt-2 text-align-justify'>
                             {
                                 projeto.descricao && projeto.descricao.split('\n').map((item, index) => {
@@ -43,7 +43,7 @@ function ProjetosFinais() {
                             }
                         </p>
                     </Col>
-                    <Col className='col-lg-8'>
+                    <Col lg={8}>
                         <div className='d-flex flex-column'>
                             {imagens && imagens.map((imagem, index) => {
                                 return (
