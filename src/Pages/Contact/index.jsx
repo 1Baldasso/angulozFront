@@ -52,9 +52,7 @@ function Contato() {
                         <div class="col-lg-6 col-sm-6">
 
                             <div className="tamanhotexto">
-                                <small class="bor_header_left"></small>
                                 <h2>{ContatoData.contato[language]}</h2>
-                                <small class="bor_header_right"></small>
                                 <div className="decorationIcons tamanhotexto">
                                     <h3>{ContatoData.contatenos[language]}</h3>
                                     <div>
@@ -79,7 +77,7 @@ function Contato() {
                         <div class="col-lg-6">
                                 <img className="ajustandoQR" src={QR} alt="" />
                         </div>
-                        <hr></hr>
+                        
                         <div className="col-lg-6 col-sm-6">
                             <div className="row">
                                 <div className="d-flex justify-content-center align-itens-center tamanhoIcone">

@@ -1,6 +1,8 @@
 import Carousel from 'react-bootstrap/Carousel';
 import TelaInicial from '../../Images/telaHome/TelaInicial.jpeg';
-import Frase from '../../Images/telaHome/Frase.png'
+import slide1 from '../../Images/telaHome/slide1.jpeg';
+import slide4 from '../../Images/telaHome/slide4.png';
+import PrimeiraCasa2 from '../../Images/telaHome/PrimeiraCasa2.jpg';
 import './styles.css';
 
 function SlideShow() {
@@ -23,7 +25,21 @@ function SlideShow() {
       <Carousel.Item className='tamanho'>
         <img
           className=" tamanhoImage d-block w-100 h-100"
-          src={TelaInicial}
+          src={slide1}
+          alt="Third slide"
+        />
+      </Carousel.Item>
+      <Carousel.Item className='tamanho'>
+        <img
+          className=" tamanhoImage d-block w-100 h-100"
+          src={PrimeiraCasa2}
+          alt="Third slide"
+        />
+      </Carousel.Item>
+      <Carousel.Item className='tamanho'>
+        <img
+          className=" tamanhoImage d-block w-100 h-100"
+          src={slide4}
           alt="Third slide"
         />
       </Carousel.Item>

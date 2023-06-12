@@ -4,6 +4,8 @@ export default class ProjetosService{
     async getAll(lang){
         const response = await axios.get(ENDPOINT_API + "/Projetos/" + lang);
         if(response.status === 200){
+            localStorage.setItem('projetos',JSON.stringify(response.data));
+            localStorage.setItem('lastAccess',new Date())            
             return response.data;
         }
     }

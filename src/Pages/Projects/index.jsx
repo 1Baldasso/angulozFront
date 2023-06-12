@@ -15,8 +15,12 @@ export default function Produtos() {
 
 
   useEffect(() => {
-
     async function fetchProjetos() {
+      const projetosLocal = localStorage.getItem('projetos');
+      if (projetosLocal) {
+        setProjetos(JSON.parse(projetosLocal));
+        return;
+      }
       try {
         const projetos = await service.getAll(language);
         setProjetos(projetos);
@@ -40,7 +44,6 @@ export default function Produtos() {
     <Header/>
       <main className='pt-5'>
       <Container>
-        <h2>Nossos Projetos</h2>
         <div className=' pt-2 d-flex flex-row justify-content-around'>
         <Row md={width > 1024 ? 3 : width > 600 ? 2 : 1} className={`g-4 gx-1 ${width < 700 ? 'flex-column' : ''}`}>
           {projetos.map((projeto) => {

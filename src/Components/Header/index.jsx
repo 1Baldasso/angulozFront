@@ -2,7 +2,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import React, {useContext} from 'react';
-import Logo from '../../Images/Logo.png';
+import Logo1 from '../../Images/Logo1.png';
 import { useLocation } from 'react-router-dom';
 import { LanguageContext } from '../../Providers/LanguageProvider';
 import MenuData from '../../Documents/MenuData.js';
@@ -14,7 +14,7 @@ function Header() {
     return (
         <Navbar className={HeaderClass} collapseOnSelect expand="lg">
             <Container className=''>
-                <Navbar.Brand href="/Home"><img className='logo' src={Logo} alt="" /></Navbar.Brand>
+                <Navbar.Brand href="/Home"><img className='logo' src={Logo1} alt="" /></Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto"></Nav>

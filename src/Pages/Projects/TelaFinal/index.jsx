@@ -13,6 +13,16 @@ function ProjetosFinais() {
     const [imagens, setImagens] = useState([]);
     const { language } = useContext(LanguageContext);
     const fetchProjeto = async () => {
+        const projetoLocal = localStorage.getItem('projetos');
+        if (projetoLocal) {
+            const projetos = JSON.parse(projetoLocal);
+            const projetoItemLocal = projetos.find((projeto) => projeto.id === id);
+            setProjeto(projetoItemLocal);
+            if(language === 'br' && projetoItemLocal.imagens !== imagens){
+                setImagens(projetoItemLocal.imagens);
+            }
+            return;
+        }
         const projeto = await service.getOne(id,language);
         setProjeto(projeto);
         if(language === 'br' && projeto.imagens !== imagens){

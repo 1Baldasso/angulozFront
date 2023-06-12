@@ -15,9 +15,10 @@
     height: 70vh !important;
 }
 
+
 .imgTamanho{
     width: 400px;
-    padding-top: 25%;
+    padding-top: 10%;
  }
 
  @media screen and (max-width: 768px) {
@@ -43,4 +44,7 @@
        padding-left: 50px;
  
     }
+}
+h1{
+    color: black;
 }
