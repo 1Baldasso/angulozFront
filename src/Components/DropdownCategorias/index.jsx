@@ -24,7 +24,7 @@ function DropdownCategorias() {
             const index = categorias.indexOf(categoria)
             setCategoria(categoriasEn[index]);
         }
-        else
+        else if(categoria !== 'Todos')
         {
             const index = categoriasEn.indexOf(categoria)
             setCategoria(categorias[index]);
