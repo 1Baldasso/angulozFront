@@ -45,7 +45,7 @@ export default function Produtos() {
 
     document.addEventListener('categoriaChange', (event) => {
       const categoria = event.detail;
-      let localProjetos = localStorage.getItem('projetos');
+      const localProjetos = localStorage.getItem('projetos');
       if (!localProjetos) {
         fetchProjetos();
       }
@@ -57,6 +57,8 @@ export default function Produtos() {
       const projetosFiltrados = projetos.filter((projeto) => {
         return projeto.categoria === categoria;
       })
+      console.log(projetos);
+      console.log(projetosFiltrados);
       setProjetos(projetosFiltrados);
     })
 
