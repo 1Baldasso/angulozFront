@@ -53,7 +53,10 @@ export default function Produtos() {
         setProjetos(JSON.parse(localProjetos));
         return;
       }
-      setProjetos(JSON.parse(localProjetos));
+      const parsedProjetos = JSON.parse(localProjetos);
+      console.log(parsedProjetos);
+      setProjetos(parsedProjetos);
+
       const projetosFiltrados = projetos.filter((projeto) => {
         return projeto.categoria === categoria;
       })
