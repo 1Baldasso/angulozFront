@@ -12,7 +12,7 @@ function Acesso() {
     const [categoria, setCategoria] = useState('');
     const [arquivos, setArquivos] = useState([]);
     const [loading, setLoading] = useState(false);
-    const categorias = ['Todos', 'Casas', 'Apartamentos', 'Comercial', 'Edifícios', 'Urbanismo']
+    const categorias = ['Todos', 'Casas', 'Interiores', 'Comercial', 'Concursos']
     const service = new UploadService();
     useEffect(() => {
         const token = localStorage.getItem('token');

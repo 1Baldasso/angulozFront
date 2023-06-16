@@ -5,8 +5,8 @@ import { LanguageContext } from "../../Providers/LanguageProvider";
 function DropdownCategorias() {
     const { language } = useContext(LanguageContext);
     const [categoria, setCategoria] = useState('Todos');
-    const categorias = ['Todos', 'Casas', 'Apartamentos', 'Comercial', 'Edifícios', 'Urbanismo']
-    const categoriasEn = ['All', 'Houses', 'Apartments', 'Commercial', 'Buildings', 'Urbanism']
+    const categorias = ['Todos', 'Casas', 'Interiores', 'Comercial', 'Concursos']
+    const categoriasEn = ['All', 'Houses', 'Interiors', 'Commercial', 'Contests']
     const categoriasMap = language === 'br' ? categorias : categoriasEn;
     const handleSelect = (eventKey) => {
         setCategoria(eventKey);
