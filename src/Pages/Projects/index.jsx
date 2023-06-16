@@ -47,22 +47,26 @@ export default function Produtos() {
       const categoria = event.detail;
       const localProjetos = localStorage.getItem('projetos');
       if (!localProjetos) {
-        fetchProjetos();
+        fetchProjetos().then(() => {
+          if (categoria === 'Todos') {
+            return;
+          }
+          const projetosFiltrados = projetos.filter((projeto) => {
+            return projeto.categoria === categoria;
+          })
+          setProjetos(projetosFiltrados);
+        });
+      } else {
+        const projetos = JSON.parse(localProjetos);
+        if (categoria === 'Todos') {
+          setProjetos(projetos);
+          return;
+        }
+        const projetosFiltrados = projetos.filter((projeto) => {
+          return projeto.categoria === categoria;
+        })
+        setProjetos(projetosFiltrados);
       }
-      if (categoria === 'Todos') {
-        setProjetos(JSON.parse(localProjetos));
-        return;
-      }
-      const parsedProjetos = JSON.parse(localProjetos);
-      console.log(parsedProjetos);
-      setProjetos(parsedProjetos);
-
-      const projetosFiltrados = projetos.filter((projeto) => {
-        return projeto.categoria === categoria;
-      })
-      console.log(projetos);
-      console.log(projetosFiltrados);
-      setProjetos(projetosFiltrados);
     })
 
     fetchProjetos();
