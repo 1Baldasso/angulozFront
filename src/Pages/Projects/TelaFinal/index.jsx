@@ -13,7 +13,7 @@ function ProjetosFinais() {
     const [imagens, setImagens] = useState([]);
     const { language } = useContext(LanguageContext);
     const fetchProjeto = async () => {
-        const projetoLocal = localStorage.getItem('projetos');
+        const projetoLocal = language === 'br' ? localStorage.getItem('projetos') : null;
         if (projetoLocal) {
             const projetos = JSON.parse(projetoLocal);
             const projetoItemLocal = projetos.find((projeto) => projeto.id === id);
