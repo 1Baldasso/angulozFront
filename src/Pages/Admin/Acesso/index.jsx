@@ -5,12 +5,14 @@ import React, { useEffect, useState, useContext } from 'react';
 import ImageUpload from './excloi';
 import UploadService from './Services/UploadService';
 import { AuthContext } from '../../../Providers/AuthProvider';
+import Loading from '../../../Components/Loading';
 function Acesso() {
     const [texto, setTexto] = useState('');
     const [titulo, setTitulo] = useState('');
     const [categoria, setCategoria] = useState('');
     const [arquivos, setArquivos] = useState([]);
-
+    const [loading, setLoading] = useState(false);
+    const categorias = ['Todos', 'Casas', 'Apartamentos', 'Comercial', 'Edifícios', 'Urbanismo']
     const service = new UploadService();
     useEffect(() => {
         const token = localStorage.getItem('token');
@@ -32,11 +34,13 @@ function Acesso() {
     const validateFields = () => {
         if (titulo === '' || texto === '' || categoria === '' || arquivos.length === 0) {
             alert('Preencha todos os campos!');
+            setLoading(false);
             return false;
         }
         return true;
     }
     const handleNovoProjeto = () => {
+        setLoading(true);
         if (!validateFields())
             return;
         let projeto = {
@@ -53,8 +57,10 @@ function Acesso() {
                 setTitulo('');
                 setCategoria('');
                 setArquivos([]);
+                setLoading(false);
             }).catch((error) => {
                 alert('Erro adicionar imagens!' + error.message);
+                setLoading(false);
             });
         }).catch((error) => {
             if(error.response.status === 401)
@@ -63,12 +69,14 @@ function Acesso() {
                 window.location.href = '/login';
             }
             alert('Erro ao criar projeto!\n' + error.message);
+            setLoading(false);
         });
-
-
+        setLoading(false);
     }
     return (
         <Container className='d-flex justify-content-center aligni-itens-center text-center'>
+            {loading && <Loading/>}
+            {!loading &&
             <Form>
                 <div className='col-lg-12 col-sm-4 justify-content-center aligni-itens-center text-center'>
                     <Form.Group className="mb-3 pt-2" controlId="formBasicEmail">
@@ -88,12 +96,9 @@ function Acesso() {
                         <FormSelect
                             value={categoria}
                             onChange={handleCategoriaChange}>
-                            <option value=""></option>
-                            <option value="Casa">Casas</option>
-                            <option value="Apartamento">Apartamentos</option>
-                            <option value="Comercial">Comercial</option>
-                            <option value="Edifícios">Edifícios</option>
-                            <option value="Urbanismo">Urbanismo</option>
+                            {categorias.map((categoria) => {
+                                return <option key={categoria} value={categoria}>{categoria}</option>
+                            })}
                         </FormSelect>
                     </div>
                 </div>
@@ -102,6 +107,7 @@ function Acesso() {
                     Criar Novo Projeto.
                 </Button>
             </Form>
+            }
         </Container>
     );
 }

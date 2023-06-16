@@ -12,7 +12,7 @@ function Legado() {
 
             <Header />
             <Container className="vhconfig">
-                <h1 className="text-center tamanhao pt-3 pb-2">{LegadoData.legado[language]}</h1>
+                {/* <h1 className="text-center tamanhao pt-3 pb-2">{LegadoData.legado[language]}</h1> */}
                 <h2 className='text-center' >Mude o Λngulo, <br></br>
                     o ponto de vista transforma o resultado</h2>
                 <div className="align-items-center justify-content-center">
