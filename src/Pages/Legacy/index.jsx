@@ -14,7 +14,7 @@ function Legado() {
             <Container className="vhconfig">
                 {/* <h1 className="text-center tamanhao pt-3 pb-2">{LegadoData.legado[language]}</h1> */}
                 <h2 className='text-center' >Mude o Λngulo, <br></br>
-                    o ponto de vista transforma o resultado</h2>
+                    o ponto de vista transforma o resultado.</h2>
                 <div className="align-items-center justify-content-center">
                     <div className="d-flex vhconfig placeitem col-12 ">
 
@@ -22,6 +22,18 @@ function Legado() {
                            {LegadoData.descricao[language]}</p>
                         <div className=" espaco pl-2 ">
                             <img className="imgTamanho espaco" src={mariza} alt="" />
+                            <div className="imgTamanhofoto">
+
+                            <h2>Mariza Da Silveira</h2>
+                            <p>Arquiteta e Urbanista - CAU N° A269214-7</p>
+                            </div>
+
+                            <img className="imgTamanho espaco" src={mariza} alt="" />
+                            <div className="imgTamanhofoto">
+
+                            <h2>Mariza Da Silveira</h2>
+                            <p>Arquiteta e Urbanista - CAU N° A269214-7</p>
+                            </div>
                         </div>
                     </div>
                 </div>
