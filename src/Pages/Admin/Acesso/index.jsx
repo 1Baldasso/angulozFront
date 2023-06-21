@@ -58,20 +58,25 @@ function Acesso() {
                 setCategoria('');
                 setArquivos([]);
                 setLoading(false);
+                
             }).catch((error) => {
+                if(error.response.status === 413){
+                    alert('Tamanho máximo de imagens excedido!');
+                    setLoading(false);
+                    return;
+                }
                 alert('Erro adicionar imagens!' + error.message);
                 setLoading(false);
+                
             });
         }).catch((error) => {
             if(error.response.status === 401)
             {
                 alert('Sessão expirada!');
                 window.location.href = '/login';
+                return;
             }
-            else if(error.response.status === 413){
-                alert('Tamanho máximo de imagens excedido!');
-                setLoading(false);
-            }
+           
             alert('Erro ao criar projeto!\n' + error.message);
             setLoading(false);
         });
