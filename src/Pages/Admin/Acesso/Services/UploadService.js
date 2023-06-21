@@ -30,22 +30,27 @@ export default class UploadService {
         for (let i = 0; i < imagens.length; i++) {
             formData.append("imageFiles", imagens[i]);
         }
+        try {
 
-        const response = await axios.post(this.url + "/Projetos/Images/Add/" + idProjeto, formData,
-            {
-                headers: {
-                    'Content-Type': 'multipart/form-data',
-                    'userSecret': this.userSecret
-                }
-            });
-        if (response.status === 200) {
-            return response.data;
+            const response = await axios.post(this.url + "/Projetos/Images/Add/" + idProjeto, formData,
+                {
+                    headers: {
+                        'Content-Type': 'multipart/form-data',
+                        'userSecret': this.userSecret
+                    }
+                });
+            if (response.status === 200) {
+                return response.data;
+            }
         }
-        await axios.delete(this.url + "/Projetos/" + idProjeto,
-            {
-                headers: {
-                    userSecret: this.userSecret
-                }
-            });
+        catch (error) {
+            
+            await axios.delete(this.url + "/Projetos/" + idProjeto,
+                {
+                    headers: {
+                        userSecret: this.userSecret
+                    }
+                });
+        }
     }
 }
