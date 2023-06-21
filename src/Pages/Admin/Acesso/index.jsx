@@ -68,6 +68,10 @@ function Acesso() {
                 alert('Sessão expirada!');
                 window.location.href = '/login';
             }
+            else if(error.response.status === 413){
+                alert('Tamanho máximo de imagens excedido!');
+                setLoading(false);
+            }
             alert('Erro ao criar projeto!\n' + error.message);
             setLoading(false);
         });
