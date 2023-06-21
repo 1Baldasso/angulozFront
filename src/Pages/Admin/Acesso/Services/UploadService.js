@@ -47,10 +47,14 @@ export default class UploadService {
             
             await axios.delete(this.url + "/Projetos/" + idProjeto,
                 {
+
                     headers: {
                         userSecret: this.userSecret
                     }
+       
                 });
-        }
+                throw error;
+            }
+       
     }
 }
