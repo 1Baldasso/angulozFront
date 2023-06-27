@@ -81,7 +81,7 @@ function Contato() {
                         <div className="col-lg-6 col-sm-6">
                             <div className="row">
                                 <div className="d-flex justify-content-center align-itens-center tamanhoIcone">
-                                    <a href="http://https://www.instagram.com/anguloz_/"><Instagram ></Instagram></a>
+                                    <a href="https://www.instagram.com/anguloz_/"><Instagram ></Instagram></a>
                                     <a href="http://https://www.instagram.com/anguloz_/"><Facebook ></Facebook></a>
                                 </div>
                             </div>
