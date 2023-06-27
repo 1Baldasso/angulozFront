@@ -1,7 +1,7 @@
 import { Container } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import Logo from '../../../Images/Logo.png'
+import Logo from '../../../Images/Logo1.png'
 import './style.css'
 import { useEffect, useState, useContext } from 'react';
 import { AuthContext } from '../../../Providers/AuthProvider';
@@ -33,7 +33,9 @@ function Login() {
     return (
         <Container className='d-flex justify-content-center align-itens-center'>
             <div className='pt-5'>
-                <img className='' src={Logo} alt="" />
+                <div className="justify-content-center pl-3">
+
+                <img className='pl-3' src={Logo} alt="" />
                 <div className='flex-column'>
                     <Form>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -52,6 +54,7 @@ function Login() {
                             Entrar
                         </Button>
                     </Form>
+                </div>
                 </div>
             </div>
         </Container>
