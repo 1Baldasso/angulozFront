@@ -1,8 +1,12 @@
 import Carousel from 'react-bootstrap/Carousel';
-import TelaInicial from '../../Images/telaHome/TelaInicial.jpeg';
-import slide1 from '../../Images/telaHome/slide1.jpeg';
-import slide4 from '../../Images/telaHome/slide4.png';
-import PrimeiraCasa2 from '../../Images/telaHome/PrimeiraCasa2.jpg';
+
+import slide1 from '../../Images/telaHome/slide1.jpg';
+import slide2 from '../../Images/telaHome/slide2.jpg';
+import slide3 from '../../Images/telaHome/slide3.jpg';
+import slide4 from '../../Images/telaHome/slide4.jpg';
+import slide5 from '../../Images/telaHome/slide5.jpg';
+import slide6 from '../../Images/telaHome/slide6.jpg';
+
 import './styles.css';
 
 function SlideShow() {
@@ -11,35 +15,42 @@ function SlideShow() {
       <Carousel.Item className='tamanho'>
         <img
           className="tamanhoImage d-block w-100 h-100"
-          src='https://cdn.pixabay.com/photo/2023/02/09/07/12/building-7778119_1280.jpg'
+          src={slide1}
           alt="First slide"
         />
       </Carousel.Item>
       <Carousel.Item className='tamanho'>
         <img
           className="tamanhoImage d-block w-100 h-100"
-          src={TelaInicial}
+          src={slide2}
           alt="Second slide"
         />
       </Carousel.Item>
       <Carousel.Item className='tamanho'>
         <img
           className=" tamanhoImage d-block w-100 h-100"
-          src={slide1}
+          src={slide3}
           alt="Fourth slide"
         />
       </Carousel.Item>
       <Carousel.Item className='tamanho'>
         <img
           className=" tamanhoImage d-block w-100 h-100"
-          src={PrimeiraCasa2}
+          src={slide4}
           alt="Fifth slide"
         />
       </Carousel.Item>
       <Carousel.Item className='tamanho'>
         <img
           className=" tamanhoImage d-block w-100 h-100"
-          src={slide4}
+          src={slide5}
+          alt="Sixth slide"
+        />
+      </Carousel.Item>
+      <Carousel.Item className='tamanho'>
+        <img
+          className=" tamanhoImage d-block w-100 h-100"
+          src={slide6}
           alt="Sixth slide"
         />
       </Carousel.Item>
