@@ -4,7 +4,7 @@ const LegadoData = {
         br: "Legado"
     },
     descricao:{
-        br: "Nosso desafio é fazer projeto que serão vibrantes daqui a décadas.",
+        br: "Nosso desafio é fazer projetos que serão vibrantes daqui a décadas.",
         en:"Our challenge is to create projects that will be vibrant for decades to come."
     },
     descricao2:{
